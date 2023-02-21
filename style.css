@@ -1,0 +1,218 @@
+/* Global styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Form container styles */
+#functions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Form styles */
+#card-generator {
+  width: 400px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  margin-right: 20px;
+}
+
+#card-generator label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#card-generator input, #card-generator select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+#card-generator input[type="submit"] {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#card-generator input[type="submit"]:hover {
+  background-color: #555;
+}
+
+#card-generator #amex {
+  margin-top: 20px;
+}
+
+/* Textarea styles */
+#generated-cards {
+  height: 400px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  font-size: 16px;
+  white-space: pre;
+  resize: none;
+  background-color: #f2f2f2;
+
+}
+
+/* Copy button styles */
+#copy-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#copy-button:hover {
+  background-color: #555;
+}
+[type=checkbox]{
+
+  width: 15px;
+  height: 15px;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  
+}
+#topheader{
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 10px;
+}
+#topheader h1{
+  font-size: 40px;
+  margin-bottom: 0;
+}
+#topheader p{
+  font-size: 20px;
+  margin-top: 0;
+}
+#topheader a{
+  color: white;
+  text-decoration: none;
+}
+#topheader a:hover{
+  color: #ccc;
+}
+#footer{
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+#footer p{
+  font-size: 20px;
+  margin-top: 0;
+}
+#footer a{
+  color: white;
+  text-decoration: none;
+}
+#footer a:hover{
+  color: #ccc;
+}
+
+
+/* Add some margin to the form elements on smaller screens */
+@media screen and (max-width: 600px) {
+  label, input[type="text"], select, #copy-button {
+    display: block;
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  #generated-cards {
+    width: 100%;
+  }
+  /* Form container styles */
+#functions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}
+#card-generator {
+  width: 80%;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  margin-right: 20px;
+}
+#textareaclip{
+
+}
+
+#generated-cards{
+  width: 100%;
+  margin-top: 20px;
+  margin-left: -15px;
+  height: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  font-size: 16px;
+  white-space: pre;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  background-color: #f2f2f2;
+}
+#amex{
+
+
+
+}
+
+[type=checkbox]{
+  margin: 0;
+}
+
+}
