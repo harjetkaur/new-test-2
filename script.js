@@ -3,7 +3,7 @@ var cachedCurrentDate = null;
 
 // function to fetch the current date from the API and store it in the cache
 async function cacheCurrentDate() {
-  const response = await fetch('https://worldtimeapi.org/api/ip');
+  const response = await fetch('http://worldtimeapi.org/api/ip');
   const data = await response.json();
   cachedCurrentDate = new Date(data.utc_datetime);
 }
@@ -62,7 +62,6 @@ function generateCardNumber(bin, isAmex) {
   return cardNumber;
 }
 
-
 function isValidLuhn(cardNumber) {
   var digits = cardNumber.split('');
   var sum = 0;
@@ -85,13 +84,11 @@ function isValidLuhn(cardNumber) {
   return sum % 10 == 0;
 }
 
-
-
-
-  
-
 async function generateCard(bin) {
   var isAmex = document.getElementById("amex").checked;
+  if (bin.charAt(bin.length - 1) === "x") {
+    bin = bin.substring(0, bin.length - 1);
+  }
   var cardNumber = generateCardNumber(bin, isAmex);
   var currentDate = cachedCurrentDate;
 
@@ -116,9 +113,9 @@ async function generateCard(bin) {
   var monthsUntilExpiration = (expirationYear - currentDate.getFullYear()) * 12 + (expirationMonth - currentDate.getMonth() - 1);
 
   var cvvInput = document.getElementById("cvv").value;
-  var cvv = (cvvInput === "") ? (isAmex ? Math.floor(Math.random() * 9000) + 0000 : Math.floor(Math.random() * 900) + 000) : cvvInput.replace(/x/g, function() { return Math.floor(Math.random() * 10); });
+  var cvv = (cvvInput === "") ? (isAmex ? Math.floor(Math.random() * 9000) + 0000 : Math.floor(Math.random() * 900) + 000) : cvvInput.replace(/x/g, function () { return Math.floor(Math.random() * 10); });
 
-  
+
 
   var expirationDate = new Date(currentDate);
   expirationDate.setMonth(expirationDate.getMonth() + monthsUntilExpiration);
@@ -129,7 +126,7 @@ async function generateCard(bin) {
   return formattedCardInfo;
 }
 
-document.getElementById("card-generator").addEventListener("submit", async function(event) {
+document.getElementById("card-generator").addEventListener("submit", async function (event) {
   event.preventDefault();
   var numCards = parseInt(document.getElementById("number_of_strings").value);
   var generatedCards = "";
