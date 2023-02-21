@@ -3,7 +3,7 @@ var cachedCurrentDate = null;
 
 // function to fetch the current date from the API and store it in the cache
 async function cacheCurrentDate() {
-  const response = await fetch('http://worldtimeapi.org/api/ip');
+  const response = await fetch('https://worldtimeapi.org/api/ip');
   const data = await response.json();
   cachedCurrentDate = new Date(data.utc_datetime);
 }
